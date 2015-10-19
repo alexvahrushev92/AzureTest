@@ -10,16 +10,16 @@
     $mugs=18;
     $sausage=21;
 
-    if $myage >= $specs;
+    if ($myage >= $specs);
     {
         print "You're old enough to buy specs";
     }
 
-    elseif $myage >= $mugs;{
+    elseif ($myage >= $mugs);{
         echo "You're old enough to buy mugs";
     }
 
-    elseif $myage >= $sausage;{
+    elseif ($myage >= $sausage);{
         echo "You're old enough to buy sausage roll";
     }
     else{
