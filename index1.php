@@ -15,11 +15,11 @@
         {
             print "You're old enough to buy specs";
         }
-        elseif ($myage >= $mugs){
+        if ($myage >= $mugs){
         print "You're old enough to buy mugs";
         }
 
-        elseif ($myage >= $sausage){
+        if ($myage >= $sausage){
             print "You're old enough to buy sausage roll";
         }
         else{
