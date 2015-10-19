@@ -4,12 +4,13 @@
     </head>
 <body>
     <p><?php echo "Hello World";?></p>
-    <?php//variable
+
+    <?php
         $myage=20;
         $specs=16;
         $mugs=18;
         $sausage=21;
-    
+
         if ($myage >= $specs)
         {
             print "You're old enough to buy specs";
@@ -24,7 +25,6 @@
         else{
             echo "you are too young";
         }
-
-?>
+    ?>
 </body>
 </html>
