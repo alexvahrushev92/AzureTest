@@ -5,25 +5,25 @@
 <body>
     <p><?php echo "Hello World";?></p>
     <?php//variable
-    $myage=20;
-    $specs=16;
-    $mugs=18;
-    $sausage=21;
+    $myage='20';
+    $specs='16';
+    $mugs='18';
+    $sausage='21';
 
-    if ($myage >= $specs);
+    if ($myage >= $specs)
     {
         print "You're old enough to buy specs";
     }
-
-    elseif ($myage >= $mugs);{
-        echo "You're old enough to buy mugs";
+    elseif ($myage >= $mugs){
+    print "You're old enough to buy mugs";
     }
 
-    elseif ($myage >= $sausage);{
-        echo "You're old enough to buy sausage roll";
+    elseif ($myage >= $sausage){
+        print "You're old enough to buy sausage roll";
     }
     else{
-        echo "you are too young"}
+        echo "you are too young";
+    }
 
 ?>
 </body>
