@@ -3,7 +3,7 @@
 <head>
     <title>User Login</title>
 </head>
-<body>
+<body style="align:center;">
 <h2>User Login </h2>
 <form name="login" method="post" action="login.php">
     Username: <input type="text" name="username"><br>
