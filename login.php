@@ -13,6 +13,7 @@
 </body>
 </html>
 <?php
+ini~_set('display_errors',1);
 /* valid username and password */
 $user = 'johndoe';
 $pass = 'password';
