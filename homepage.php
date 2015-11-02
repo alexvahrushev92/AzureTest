@@ -10,5 +10,5 @@ function displayAccessLevelInformation($accessLevel){
     }
 }
 
-displayAccessLevelInformation($_COOKIE['access_leve']);
+displayAccessLevelInformation($_COOKIE['access_level']);
 
