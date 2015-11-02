@@ -1,44 +1,37 @@
-<html>
-<head>
-    <title>User Login</title>
-</head>
-<body>
-<h2>User Login </h2>
-<form name="login" method="post" action="login.php">
-    Username: <input type="text" name="username"><br>
-    Password: <input type="password" name="password"><br>
-    Remember Me: <input type="checkbox" name="rememberme" value="1"><br>
-    <input type="submit" name="submit" value="Login!">
-</form>
-</body>
-</html>
 <?php
-ini~_set('display_errors',1);
-/* valid username and password */
-$user = 'johndoe';
-$pass = 'password';
 
-if (isset($_POST['username']) && isset($_POST['password')) {
-
-    if (($_POST['username'] == $user) && ($_POST['password'] == $pass)) {
-
-        if (isset($_POST['rememberme'])) {
-            /* Set cookie to last 1 year */
-            setcookie('username', $_POST['username'], time()+60*60*24*365, 'http://microsoftstillsucks.azurewebsites.net/login.php');
-            setcookie('password', md5($_POST['password']), time()+60*60*24*365, 'http://microsoftstillsucks.azurewebsites.net/login.php');
-
-        } else {
-            /* Cookie expires when browser closes */
-            setcookie('username', $_POST['username'], false, 'http://microsoftstillsucks.azurewebsites.net/login.php');
-            setcookie('password', md5($_POST['password']), false, 'http://microsoftstillsucks.azurewebsites.net/login.php');
-        }
-        header('Location: index.php');
-
-    } else {
-        echo 'Username/Password Invalid';
+if(isset($_COOKIE['username']) || $_COOKIE['password']){
+    $username = $_COOKIE['username'];
+    $password = $_COOKIE['password'];
+    if ($username == "test" && $password == "test"){
+        echo 'cookie logged in<br />';
+        echo 'Click <a href="logout.php">here</a> to log out';
     }
-
-} else {
-    echo 'You must supply a username and password.';
 }
-?>
+
+if(isset($_POST['submit'])){
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if ($username == "test" && $password == "test"){
+        setcookie('username', '', time()-3600, '/');
+        setcookie('password', '', time()-3600, '/');
+        header("Location: login.php");
+        echo 'logged in<br />';
+        echo 'Click <a href="logout.php">here</a> to log out';
+    }
+    else {
+        echo 'Log in failed';
+    }
+}
+else {
+    if(!isset($_COOKIE['username'])){
+        echo '<form action="" method="POST">';
+        echo 'Username - <input name="username" type="text"><br />';
+        echo 'Password - <input name="password" type="password"><br />';
+        echo '<input name="submit" type="submit" value="Submit"><br />';
+        echo '</form>';
+    }
+}
+?> 
