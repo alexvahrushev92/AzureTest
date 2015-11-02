@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if ($username == "test" && $password == "test"){
+    if ($username == "root" && $password == "root"){
         setcookie('username', '', time()-3600, '/');
         setcookie('password', '', time()-3600, '/');
         header("Location: login.php");
