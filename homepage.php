@@ -1,36 +1,14 @@
 <?php
 
-if(isset($_COOKIE['username']) || $_COOKIE['password']){
-    $username = $_COOKIE['username'];
-    $password = $_COOKIE['password'];
-    if ($username == "test" && $password == "test"){
-        echo 'cookie logged in<br />';
-        echo 'Click <a href="logout.php">here</a> to log out';
+function displayAccessLevelInformation($accessLevel){
+    if($accessLevel == "standarduser"){
+        echo "<p>You are currently logged in a a standard user</p>";
+    }
+    elseif($accessLevel == "root" ){
+        echo "<p>You are currently logged in a a root user</p>";
+        echo "<p>You now have access to additional administrative features</p>";
     }
 }
 
-if(isset($_POST['submit'])){
+displayAccessLevelInfor
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    if ($username == "test" && $password == "test"){
-        setcookie("username", $username, time()+3600, "/");
-        setcookie("password", $password, time()+3600, "/");
-        echo 'logged in<br />';
-        echo 'Click <a href="logout.php">here</a> to log out';
-    }
-    else {
-        echo 'Log in failed';
-    }
-}
-else {
-    if(!isset($_COOKIE['username'])){
-        echo '<form action="" method="POST">';
-        echo 'Username - <input name="username" type="text"><br />';
-        echo 'Password - <input name="password" type="password"><br />';
-        echo '<input name="submit" type="submit" value="Submit"><br />';
-        echo '</form>';
-    }
-}
-?> 

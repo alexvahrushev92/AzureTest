@@ -1,37 +1,20 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Cookies</title>
+    <LINK href="" rel="stylesheet" type="text/css">
+</head>
+<body>
 
-if(isset($_COOKIE['username']) || $_COOKIE['password']){
-    $username = $_COOKIE['username'];
-    $password = $_COOKIE['password'];
-    if ($username == "root" && $password == "root"){
-        echo 'cookie logged in<br />';
-        echo 'Click <a href="logout.php">here</a> to log out';
-    }
-}
+<form action="checkLogin.php" method="post">
+    <label>Username:</label><input type="text" name="username">
+    <br>
+    <label>Password:</label><input type="password" name="password">
+    <br>
+    <input type="submit" value="Login">
+</form>
 
-if(isset($_POST['submit'])){
+</body>
+</html>
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    if ($username == "root" && $password == "root"){
-        setcookie('username', '', time()-3600, '/');
-        setcookie('password', '', time()-3600, '/');
-        header("Location: login.php");
-        echo 'logged in<br />';
-        echo 'Click <a href="logout.php">here</a> to log out';
-    }
-    else {
-        echo 'Log in failed';
-    }
-}
-else {
-    if(!isset($_COOKIE['username'])){
-        echo '<form action="" method="POST">';
-        echo 'Username - <input name="username" type="text"><br />';
-        echo 'Password - <input name="password" type="password"><br />';
-        echo '<input name="submit" type="submit" value="Submit"><br />';
-        echo '</form>';
-    }
-}
-?> 
