@@ -3,7 +3,7 @@
 if(isset($_COOKIE['username']) || $_COOKIE['password']){
     $username = $_COOKIE['username'];
     $password = $_COOKIE['password'];
-    if ($username == "test" && $password == "test"){
+    if ($username == "root" && $password == "root"){
         echo 'cookie logged in<br />';
         echo 'Click <a href="logout.php">here</a> to log out';
     }
