@@ -1,7 +1,7 @@
 <?php
 /* These are our valid username and passwords */
-$user = 'jonny4';
-$pass = 'delafoo';
+$user = 'johndoe';
+$pass = 'password';
 
 if (isset($_COOKIE[['username']) && isset($_COOKIE['password')) {
 
